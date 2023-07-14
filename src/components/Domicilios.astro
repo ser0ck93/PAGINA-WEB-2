@@ -1,0 +1,53 @@
+---
+import Section from "./section.astro";
+---
+<Section
+  title="Domicilios"
+  subtitle="Descuentos todos los dias"
+  color="black"
+  id="Domicilios"
+>
+  <div slot="footer" class="gap-x-6 flex mx-auto">
+    <a
+      class="border-[3px] border-gray-600 bg-gray-600 text-sm rounded font-medium text-black px-12 py-2 inline-block transition-colors hover:border-gray-500 hover:bg-gray-500"
+      href="#"
+    >
+      Contacto</a
+    >
+    <a
+      class="bg-white text-sm rounded font-medium px-12 py-2 transition-colors hover:bg-black hover:text-white inline-flex justify-center items-center text-black"
+      href="#"
+    >
+      carrito de compra</a
+    >
+  </div>
+
+  <img
+    slot="background"
+    alt="Domicilios"
+    class="h-full w-full object-cover object-center"
+    src="public/Domicilios.jpg" 
+    id="domiciliospage"
+  />
+</Section>
+
+<script>
+  function isEdge() {
+    if (
+      navigator.userAgent.indexOf("Edge") > -1 ||
+      navigator.userAgent.indexOf("Edg") > -1
+    ) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  let imageElement = document.querySelector("#domiciliospage") as HTMLImageElement; // TypeScript
+
+  if (isEdge()) {
+    imageElement.src = "Domicilios.webp";
+  } else {
+    imageElement.src = "Domicilios.jpg";
+  }
+</script>
